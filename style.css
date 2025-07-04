@@ -1,0 +1,94 @@
+body {
+  font-family: 'Rubik', sans-serif;
+  background: linear-gradient(to bottom right, #eefdf2, #e6f7ff);
+  padding: 2rem;
+}
+
+.container {
+  max-width: 900px; /* atau 80%, tergantung preferensi */
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #d8f7e2;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.slider-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.scrolling-slider {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.sample-track {
+  display: flex;
+  gap: 1rem;
+  animation: scrollSlider 30s linear infinite;
+}
+
+.sample-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 150px;
+  text-align: center;
+}
+
+.sample-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  padding: 5px;
+}
+
+.sample-card p {
+  margin-top: 0.5rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+@keyframes scrollSlider {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.drop-area {
+  border: 2px dashed #198754;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  background-color: #dfffe6;
+  max-width: 100%;
+}
+
+.drop-area img {
+  max-height: 130px;
+  margin-top: 1rem;
+  object-fit: contain;
+}
+
+.drop-area.hover {
+  background-color: #d1f7d6;
+}
+
+.result-box {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.scrolling-slider:hover .sample-track {
+  animation-play-state: paused;
+}

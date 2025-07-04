@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Klasifikasi Gambar Buah</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2 class="text-center mb-5">🍎 Sistem Klasifikasi Gambar Buah 🍌</h2>
+
+    <!-- Slider Sample buah -->
+    <div class="slider-wrapper mb-4">
+      <div class="scrolling-slider">
+        <div class="sample-track">
+          <!-- Duplikat gambar agar looping sempurna -->
+          <div class="sample-card"><img src="samples/fresh_apples.png" draggable="true" /><p>Fresh Apples</p></div>
+          <div class="sample-card"><img src="samples/fresh_banana.png" draggable="true" /><p>Fresh Banana</p></div>
+          <div class="sample-card"><img src="samples/tensorflow.jpg" draggable="true" /><p>Tensorflow</p></div>
+          <div class="sample-card"><img src="samples/rotten_apples.png" draggable="true" /><p>Rotten Apples</p></div>
+          <div class="sample-card"><img src="samples/rotten_banana.png" draggable="true" /><p>Rotten Banana</p></div>
+          <div class="sample-card"><img src="samples/fresh_apples.png" draggable="true" /><p>Fresh Apples</p></div>
+          <div class="sample-card"><img src="samples/fresh_banana.png" draggable="true" /><p>Fresh Banana</p></div>
+          <div class="sample-card"><img src="samples/tensorflow.jpg" draggable="true" /><p>Tensorflow</p></div>
+          <div class="sample-card"><img src="samples/rotten_apples.png" draggable="true" /><p>Rotten Apples</p></div>
+          <div class="sample-card"><img src="samples/rotten_banana.png" draggable="true" /><p>Rotten Banana</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input Gambar -->
+    <div id="dropZone" class="drop-area">
+      <p>Tarik dan jatuhkan gambar di sini atau klik untuk unggah</p>
+      <input type="file" id="imageInput" accept="image/*" hidden />
+      <img id="preview" src="#" alt="Preview" hidden />
+    </div>
+
+    <!-- Tombol Prediksi -->
+    <div class="text-center mt-4">
+      <button id="predictBtn" class="btn btn-success px-4">🔍 Prediksi</button>
+    </div>
+
+    <!-- Hasil Prediksi -->
+    <div class="text-center mt-4 result-box" id="resultBox" style="display: none;">
+      <h4 class="text-success">Hasil Prediksi:</h4>
+      <p class="lead mb-1"><strong id="predictedLabel"></strong></p>
+      <p class="text-muted" id="confidenceScore" style="font-size: 0.95rem;"></p>
+    </div>
+    
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
